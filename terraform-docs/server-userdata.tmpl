@@ -1,0 +1,32 @@
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+# Install K3s server
+sudo curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.21.8+k3s1 sh -s - server \
+  --token ${token} \
+  --cluster-init \
+
+
+# Wait for k3s.yaml to appear
+while ! [ -e /etc/rancher/k3s/k3s.yaml ]
+do 
+  sleep 3
+done
+
+# Wait for 60 seconds
+sleep 60
+
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml #to set KUBECONFIG
+
+snap install helm --classic # install helm 
+
+#gitlab gives this snippet 
+helm repo add gitlab https://charts.gitlab.io
+helm repo update
+helm upgrade --install dev-agent gitlab/gitlab-agent \
+    --namespace dev \
+    --create-namespace \
+    --set image.tag=v17.4.2 \
+    --set config.token=glagent-hdHodH9E1pdasZSbfSWkdU_xEacGYcEK9ufhGPnrfVbfrp8y5Q \
+    --set config.kasAddress=wss://gitlab.nioyatech.com//-/kubernetes-agent/

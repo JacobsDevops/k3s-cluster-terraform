@@ -1,0 +1,14 @@
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+#cahnge hostnameß
+echo "worker" > /etc/hostname
+hostnamectl set-hostname "worker"
+
+#to install k3s and attach to server node
+sudo curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.21.8+k3s1 sh -s - agent \
+  --server https://${host}:6443 \
+  --token ${token} \
+
+
