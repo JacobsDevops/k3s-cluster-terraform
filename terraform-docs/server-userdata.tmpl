@@ -19,14 +19,4 @@ sleep 60
 
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml #to set KUBECONFIG
 
-snap install helm --classic # install helm 
-
-#gitlab gives this snippet 
-helm repo add gitlab https://charts.gitlab.io
-helm repo update
-helm upgrade --install dev-agent gitlab/gitlab-agent \
-    --namespace dev \
-    --create-namespace \
-    --set image.tag=v17.4.2 \
-    --set config.token=glagent-hdHodH9E1pdasZSbfSWkdU_xEacGYcEK9ufhGPnrfVbfrp8y5Q \
-    --set config.kasAddress=wss://gitlab.nioyatech.com//-/kubernetes-agent/
+#
