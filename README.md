@@ -4,11 +4,8 @@ Terraform (Infrastructure provisioning)
 
 K3s (Lightweight Kubernetes for orchestration)
 
-AWS EC2 & ECR (Compute & Container Registry)
+AWS EC2 
 
-AWS Route53 (Cloud Domain Name System)
-
-PostgreSQL (Database management)
 
 
 
