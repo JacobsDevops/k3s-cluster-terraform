@@ -1,7 +1,5 @@
 ## Core DevOps Tools Used in the Project
 
-GitLab (Version control & CI/CD)
-
 Terraform (Infrastructure provisioning)
 
 K3s (Lightweight Kubernetes for orchestration)
