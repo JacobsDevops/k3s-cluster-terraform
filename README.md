@@ -1,3 +1,19 @@
+## Core DevOps Tools Used in the Project
+
+GitLab (Version control & CI/CD)
+
+Terraform (Infrastructure provisioning)
+
+K3s (Lightweight Kubernetes for orchestration)
+
+AWS EC2 & ECR (Compute & Container Registry)
+
+AWS Route53 (Cloud Domain Name System)
+
+PostgreSQL (Database management)
+
+
+
 # K3s
 Lightweight Kubernetes. Easy to install, half the memory, all in a binary of less than 100 MB.
 
