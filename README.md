@@ -7,8 +7,6 @@ K3s (Lightweight Kubernetes for orchestration)
 AWS EC2 
 
 
-
-
 # K3s
 Lightweight Kubernetes. Easy to install, half the memory, all in a binary of less than 100 MB.
 
